@@ -37,15 +37,16 @@ class PositiveConstraint(WeightHacker):
 
 
 class HebbMask(WeightHacker):
-    def __init__(self, module, weights):
+    def __init__(self, module, weights, lr=0.1):
         super(HebbMask, self).__init__(module, weights)
+        self.lr = lr
         self.register_buffer('permanence', torch.autograd.Variable(torch.ones_like(module.weight_raw.data), requires_grad=False))
     
     def _update(self, x, y):
         x = x.unsqueeze(1)
         y = y.unsqueeze(2)
         update = torch.addbmm(torch.autograd.Variable(torch.Tensor([0]).cuda()), y, x)
-        self.permanence.data = (self.permanence.data + update.data * self.module.weight_raw.data).clamp_(-1, 1)
+        self.permanence.data = (self.permanence.data + self.lr * update.data * self.module.weight_raw.data).clamp_(-1, 1)
 
     def method(self, raw_w):
         return raw_w * (self.permanence > 0).type_as(self.permanence)
