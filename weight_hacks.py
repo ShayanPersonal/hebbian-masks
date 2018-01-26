@@ -32,6 +32,7 @@ class WeightHacker(nn.Module):
 
 
 class PositiveConstraint(WeightHacker):
+    # Example usage of WeightHacker. This module forces all the weights to be positive.
     def method(self, raw_w):
         return F.relu(raw_w)
 
