@@ -1,5 +1,7 @@
 # hebbian masks and better convolutions
 
+Run with "python run.py"
+
 This is a experiment with what I call "hebbian masks". The idea is to prune unused weights with the hebbian learning rule.
 
 When applied to fully connected layers it seems to have no affect on learning but significantly increases the sparsity of connections. For example, I augmented the final layer of wide-resnet with a hebbian mask and it got the same validation error but with a significant amount of the synapses pruned (if I remember correctly over 90%).
