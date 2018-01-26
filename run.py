@@ -23,7 +23,7 @@ def train(epoch):
         
         if batch_idx % 200 == 0:
             print(output)
-            print(torch.sum((model.hebb_classifier2.permanence > 0).type_as(model.hebb_classifier2.permanence)))
+            print(torch.sum((model.hebb_classifier.permanence > 0).type_as(model.hebb_classifier.permanence)))
             print("Time: ", time_sum / (batch_idx + 1))
             print('Train Epoch: {} [{}/{} ({:.0f}%)]\tLoss: {:.6f}'.format(
                 epoch, batch_idx * len(data), len(train_loader.dataset),
