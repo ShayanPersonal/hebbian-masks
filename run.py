@@ -21,13 +21,16 @@ def train(epoch):
         after = time.time()
         time_sum += after - before
         
-        if batch_idx % 200 == 0:
+        if batch_idx % 1000 == 0:
             print(output)
-            print(torch.sum((model.hebb_classifier.permanence > 0).type_as(model.hebb_classifier.permanence)))
+            total_connections = model.hebb_classifier.permanence.size(0) * model.hebb_classifier.permanence.size(1)
+            activated_connections = int(torch.sum((model.hebb_classifier.permanence > 0).type_as(model.hebb_classifier.permanence)).data[0])
+            print("Activated / total connections in classifier: {} / {}".format(activated_connections, total_connections))
             print("Time: ", time_sum / (batch_idx + 1))
             print('Train Epoch: {} [{}/{} ({:.0f}%)]\tLoss: {:.6f}'.format(
                 epoch, batch_idx * len(data), len(train_loader.dataset),
                 100. * batch_idx / len(train_loader), loss.data[0]))
+            print("=========================================")
 
 def test():
     print("Testing")

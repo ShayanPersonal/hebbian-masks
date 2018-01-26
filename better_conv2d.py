@@ -7,7 +7,7 @@ class SeparatedConv2d(nn.Module):
         self.conv3x3 = nn.Conv2d(in_channels, in_channels*k, 
             kernel_size=kernel_size, stride=stride, padding=padding, dilation=dilation, groups=in_channels, bias=bias)
         self.relu = nn.ReLU()
-        self.conv1x1 = nn.Conv2d(in_channels*k, out_channels
+        self.conv1x1 = nn.Conv2d(in_channels*k, out_channels,
             kernel_size=1, stride=1, padding=0, dilation=1, groups=1, bias=bias)
 
     def forward(self, x):

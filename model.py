@@ -2,8 +2,8 @@ import torch
 from torch import nn
 import torch.nn.functional as F
 
-from better_conv2d import BetterConv2d
-from weight_hacks import HebbMask, PositiveConstraint
+from better_conv2d import *
+from weight_hacks import HebbMask
 
 #def double_relu(x, dim=1):
 #    return torch.cat((F.relu(x), F.relu(-x)), dim)
