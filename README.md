@@ -12,4 +12,4 @@ When applied to fully connected layers it seems to have no affect on learning bu
 
 Han et al. (https://arxiv.org/abs/1506.02626) also reduce the number of parameters during training, although they use a multi-step process.
 
-I also tried writing a version of convolutions compatible with hebbian pruning but realized that idea has been already been discovered (Google calls it "Separated convolutions" and it's used in xception for example (https://arxiv.org/abs/1610.02357), Pytorch has it partially implemented with "Grouped convolutions").
+I also tried writing a version of convolutions better compatible with hebbian pruning but realized "separated convolutions" are already a thing (Google calls it "Separated convolutions" and it's used in xception for example (https://arxiv.org/abs/1610.02357), Pytorch has it partially implemented with "Grouped convolutions").
