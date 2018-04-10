@@ -1,4 +1,4 @@
-# hebbian masks and better convolutions
+# hebbian masks
 
 Update 4/10/18: Uber used a modified version of this method in their "differentiable plasticity" paper which you can read here (https://arxiv.org/abs/1804.02464).
 
