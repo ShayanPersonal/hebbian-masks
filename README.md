@@ -1,6 +1,6 @@
 # hebbian masks
 
-Update 4/10/18: Uber used a similar idea in their "differentiable plasticity" paper which you can read here (https://arxiv.org/abs/1804.02464).
+Update 4/10/18: Uber uses a similar idea in their "differentiable plasticity" paper which you can read here (https://arxiv.org/abs/1804.02464).
 
 This is a experiment with what I call "hebbian masks". The idea is to prune bad connections between neurons with the hebbian learning rule. This results in smaller models and possibly has a regularizing affect.
 
