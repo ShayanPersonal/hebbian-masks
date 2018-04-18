@@ -1,7 +1,0 @@
-modify wide resnet or densenet so when there's 256 filters the group size on 3x3 is 256, then 1x1 to merge them together.
-make the weights of the 1x1 and fully connected positive only, use concatenated relu
-add hebbian learning mask on top of fully connected and 1x1 weights? might not be necessary if weights are positive only.
-
-connections should be adjusted with hebbian learning during test time?
-
-residual connections are just a form of attention?
